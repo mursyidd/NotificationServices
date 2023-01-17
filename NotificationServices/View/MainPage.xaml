@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NotificationServices.View.MainPage">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="bg.jpeg" VerticalOptions="Fill" Aspect="Fill"/>
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="5"
+                RowDefinitions="*,Auto,Auto,Auto"
+                RowSpacing="0">
+                <Label
+                    Text="Notification Services"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Grid.ColumnSpan="2"
+                    FontSize="40"
+                    FontAttributes="Bold"/>
+
+                <Button x:Name="LoginBtn"
+                    Text="Login"
+                    Clicked="onLoginClicked"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Style="{StaticResource ButtonOutline}"
+                    Margin="8"/>
+
+                <Button x:Name="ExitBtn"
+                    Text="Exit"
+                    Clicked="onExitClicked"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Style="{StaticResource ButtonOutline}"
+                    Margin="8"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             x:Class="NotificationServices.LoginPage"
+             xmlns:viewmodel="clr-namespace:NotificationServices.ViewModel"
+             x:DataType="viewmodel:LoginViewModel"
+             Title="Login Page">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="bg.jpeg" VerticalOptions="Fill" Aspect="Fill"/>
+            <Grid HorizontalOptions="Center" VerticalOptions="Center" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+
+                <inputLayout:SfTextInputLayout Grid.Row="0" Grid.Column="0" WidthRequest="250" Hint="Name" ContainerType="Outlined" OutlineCornerRadius="8">
+                    <Entry Text="{Binding UserName}" x:Name="nametxt" TextColor="Black" HeightRequest="48" WidthRequest="200"/>
+                </inputLayout:SfTextInputLayout>
+                <inputLayout:SfTextInputLayout EnablePasswordVisibilityToggle="True" Grid.Row="1" Grid.Column="0" WidthRequest="250" Hint="Password" ContainerType="Outlined" OutlineCornerRadius="8">
+                    <Entry Text="{Binding Password}" x:Name="passwordtxt" TextColor="Black" IsPassword="True" HeightRequest="48" WidthRequest="200"/>
+                </inputLayout:SfTextInputLayout>
+
+                <HorizontalStackLayout Grid.Row="2" HorizontalOptions="Center">
+                    <CheckBox x:Name="onlinechk" CheckedChanged="StaySignInRadio_CheckedChanged" Margin="0,8"/>
+                    <Label 
+                        Text="Remember me"
+                        FontSize="18" Margin="0,8"
+                        VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+
+                <Grid Grid.Row="3" Padding="0,40,0,0">
+                    <VerticalStackLayout Spacing="20">
+                        <Button Text="Login" Command="{Binding LoginCommand}" HeightRequest="40" WidthRequest="150" BackgroundColor="#2c363c" Style="{StaticResource ButtonOutline}"/>
+                        <Button Text="Register" Command="{Binding RegisterCommand}" HeightRequest="40" WidthRequest="150" BackgroundColor="#2c363c" Style="{StaticResource ButtonOutline}"/>
+                        <!--<Button Text="Delete all" Command="{Binding DeleteAllCommand}" HeightRequest="40" WidthRequest="100" BackgroundColor="#2c363c" Style="{StaticResource ButtonOutline}"/>-->
+                    </VerticalStackLayout>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
