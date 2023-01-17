@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NotificationServices.DashboardPage"
-             Title="Dashboard">
+             Title="DASHBOARD">
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsEnabled="False" 
                             IsVisible="False"/>
@@ -26,38 +26,40 @@
     </ContentPage.MenuBarItems>
 
     <ContentPage.Content>
-        <Grid
-            RowDefinitions="Auto,Auto"
-            RowSpacing="0">
+        <Grid>
             <Image Source="bg3.webp" VerticalOptions="Fill" Aspect="Fill"/>
-            <VerticalStackLayout 
-                Grid.Row="0"
-                VerticalOptions="Start">
-                <Label
-                    x:Name="WelomeTxt"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" 
-                    Margin="0,10,0,0"/>
-            </VerticalStackLayout>
-
             <Grid
-                VerticalOptions="End"
-                Grid.Row="1"
-                RowDefinitions="Auto,Auto"
+                RowDefinitions="Auto,*"
                 RowSpacing="0">
-            <Button x:Name="LogoutBtn"
+                <VerticalStackLayout 
+                    Grid.Row="0"
+                    VerticalOptions="Start">
+                    <Label
+                        x:Name="WelomeTxt"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center" 
+                        FontSize="Medium"
+                        Margin="0,10,0,0"/>
+                </VerticalStackLayout>
+                <Grid
+                    VerticalOptions="End"
+                    Grid.Row="1"
+                    RowDefinitions="Auto,Auto"
+                    RowSpacing="0">
+                    <Button x:Name="LogoutBtn"
                         Text="Logout"
                         Clicked="onLogoutClicked"
                         Grid.Row="0"
                         Style="{StaticResource ButtonOutline}"
                         Margin="8"/>
 
-            <Button x:Name="ExitBtn"
+                    <Button x:Name="ExitBtn"
                         Text="Exit"
                         Clicked="onExitClicked"
                         Grid.Row="1"
                         Style="{StaticResource ButtonOutline}"
                         Margin="8"/>
+                </Grid>
             </Grid>
         </Grid>
     </ContentPage.Content>

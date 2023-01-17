@@ -8,6 +8,9 @@ public partial class LoginPage : ContentPage
 	public LoginPage()
 	{
 		InitializeComponent();
+        nametxt.Text = string.Empty;
+        passwordtxt.Text = string.Empty;
+
         this.BindingContext = new LoginViewModel(this.Navigation);
 	}
 

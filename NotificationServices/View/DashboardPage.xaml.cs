@@ -31,10 +31,18 @@ public partial class DashboardPage : ContentPage
     public DashboardPage()
 	{
 		InitializeComponent();
+        NavigationPage.SetHasBackButton(this, false);
+
 #if WINDOWS
         LogoutBtn.IsVisible = false;
         ExitBtn.IsVisible = false;
 #endif
+    }
+
+    protected override bool OnBackButtonPressed()
+    {
+        //return base.OnBackButtonPressed();
+        return true;
     }
 
     private async void onExitClicked(object sender, EventArgs e)
