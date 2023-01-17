@@ -40,8 +40,8 @@ public partial class DashboardPage : ContentPage
     private async void onExitClicked(object sender, EventArgs e)
     {
         // Set a string value:
-        Preferences.Default.Set("Username", name);
-        Preferences.Default.Set("Password", password);
+        //Preferences.Default.Set("Username", name);
+        //Preferences.Default.Set("Password", password);
 
         Application.Current.Quit();
 

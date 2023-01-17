@@ -50,6 +50,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\bg.jpeg" />
+	  <None Remove="Resources\Images\bg3.webp" />
 	</ItemGroup>
 
 	<ItemGroup>

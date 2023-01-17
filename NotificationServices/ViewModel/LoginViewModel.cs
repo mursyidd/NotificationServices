@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Xml.Linq;
 using NotificationServices.Model;
 using SQLite;
 
@@ -39,6 +40,9 @@ namespace NotificationServices.ViewModel
                 {
                     //Navigation Next Page
                     //await Navigation.PushModelAsync(new ProductPage());
+                    Preferences.Default.Set("Username", logindata.UserName);
+                    Preferences.Default.Set("Password", logindata.Password);
+
                     await Shell.Current.GoToAsync($"DashboardPage?Username={logindata.UserName}&Password={logindata.Password}");
                 }
                 else
