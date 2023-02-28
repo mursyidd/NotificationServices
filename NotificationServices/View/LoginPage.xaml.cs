@@ -8,8 +8,6 @@ public partial class LoginPage : ContentPage
 	public LoginPage()
 	{
 		InitializeComponent();
-        nametxt.Text = string.Empty;
-        passwordtxt.Text = string.Empty;
 
         this.BindingContext = new LoginViewModel(this.Navigation);
 	}
@@ -24,18 +22,17 @@ public partial class LoginPage : ContentPage
             Preferences.Default.Remove("StaySignIn");
     }
 
-    private void onClearclicked(object sender, EventArgs e)
-    {
-        nametxt.Text = string.Empty;
-        passwordtxt.Text = string.Empty;
-        //StaySignInRadio.IsChecked = false;
-    }
-
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         if (onlinechk.IsChecked)
             onlinechk.IsChecked = false;
         else
             onlinechk.IsChecked = true;
+    }
+
+    private void ContentPage_Loaded(object sender, EventArgs e)
+    {
+        nametxt.Text = string.Empty;
+        passwordtxt.Text = string.Empty;
     }
 }

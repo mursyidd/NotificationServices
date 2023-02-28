@@ -5,6 +5,7 @@
              x:Class="NotificationServices.LoginPage"
              xmlns:viewmodel="clr-namespace:NotificationServices.ViewModel"
              x:DataType="viewmodel:LoginViewModel"
+             Loaded="ContentPage_Loaded"
              Title="Login Page">
     <ContentPage.Content>
         <Grid>
@@ -22,7 +23,7 @@
                     <Entry Text="{Binding UserName}" x:Name="nametxt" TextColor="Black" HeightRequest="48" WidthRequest="200"/>
                 </inputLayout:SfTextInputLayout>
                 <inputLayout:SfTextInputLayout EnablePasswordVisibilityToggle="True" Grid.Row="1" Grid.Column="0" WidthRequest="250" Hint="Password" ContainerType="Outlined" OutlineCornerRadius="8">
-                    <Entry Text="{Binding Password}" x:Name="passwordtxt" TextColor="Black" IsPassword="True" HeightRequest="48" WidthRequest="200"/>
+                    <Entry Text="{Binding Password, Mode=TwoWay }" x:Name="passwordtxt" TextColor="Black" IsPassword="True" HeightRequest="48" WidthRequest="200"/>
                 </inputLayout:SfTextInputLayout>
 
                 <HorizontalStackLayout Grid.Row="2" HorizontalOptions="Center">

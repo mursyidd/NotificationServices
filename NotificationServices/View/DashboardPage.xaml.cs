@@ -37,6 +37,9 @@ public partial class DashboardPage : ContentPage
         LogoutBtn.IsVisible = false;
         ExitBtn.IsVisible = false;
 #endif
+
+        //label.BindingContext = slider;
+        //label.SetBinding(Label.RotationProperty, "Value");
     }
 
     protected override bool OnBackButtonPressed()
